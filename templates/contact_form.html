@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/styles.css">
-    <title>Contact Form</title>
+    <title>Formulario de Contacto</title>
 </head>
 <body>
-    <form id="contact-form" method="POST" action="/send_email">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" name="user_name" required />
-        <br />
-        <label for="email">Email</label>
-        <input type="email" id="email" name="user_email" required />
-        <br />
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-        <br />
-        <button type="submit">Send</button>
-    </form>
+    <div class="feedback-card">
+        <div class="feedback-header">
+            Contactame
+    </div>
+        <form class="feedback-body" id="contact-form" method="POST" action="/send_email">
+            <input type="text" id="name" name="user_name" placeholder="Nombre" required />
+            <input class="feedback-body__email" type="email" id="email" name="user_email" placeholder="Email" required />
+            <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+            <button class="feedback-body__submit">Enviar</button>
+        </form>
+    </div>
     
 </body>
 </html>
