@@ -15,12 +15,25 @@ EMAILJS_API_URL = "https://api.emailjs.com/api/v1.0/email/send"
 
 @app.route('/')
 def index():
+    '''
+    Renderizo mi contact_form.html
+    '''
     return render_template('contact_form.html')
 
 
 @app.route('/send_email', methods=['POST'])
 def send_email():
+    '''
+    Obtenemos de nuestro formulario, 
     
+    user_name
+    user_email
+    message
+    
+    preparamos la Data con nuestros variables ya obtenidas de nuestro .env
+    
+    y hacemos el POST correspondiente
+    '''
     user_name = request.form['user_name']
     user_email = request.form['user_email']
     message = request.form['message']
@@ -48,4 +61,4 @@ def send_email():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
